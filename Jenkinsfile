@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run tests') {
             steps {
-                sh '. venv/bin/activate && python -m unittest discover -s ci_demo/tests'
+                sh '. venv/bin/activate && python -m unittest discover -s ci_demo/tests -p "test_*.py"'
             }
         }
     }
