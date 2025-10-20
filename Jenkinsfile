@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run tests') {
             steps {
-                sh '. venv/bin/activate && PYTHONPATH=$PYTHONPATH:$(pwd) python -m unittest discover -s ci_demo/tests -p "test_*.py"'
+                sh '. venv/bin/activate && PYTHONPATH=$PYTHONPATH:$(pwd)/ci_demo python -m unittest discover -s ci_demo/tests -p "test_*.py"'
             }
         }
     }
